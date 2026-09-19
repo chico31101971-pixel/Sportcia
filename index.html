@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport & Cia - A Loja Mais Completa da Cidade</title>
+    <style>
+        :root {
+            --primary-color: #0b132b;
+            --secondary-color: #1c2541;
+            --accent-color: #e63946;
+            --gold-color: #ffb703;
+            --light-bg: #f8f9fa;
+            --text-color: #212529;
+            --gray-text: #6c757d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            background: var(--primary-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero .tagline {
+            font-size: 1.2rem;
+            color: var(--gold-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.95rem;
+            color: #e0e0e0;
+            margin-top: 15px;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin: 40px 0 25px 0;
+            text-align: center;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e9ecef;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .product-header {
+            background: #f1f3f5;
+            padding: 20px 15px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .product-subtitle {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        .product-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .features-list li {
+            font-size: 0.9rem;
+            color: #495057;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .features-list li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f1f3f5;
+            padding-top: 15px;
+        }
+
+        .badge {
+            background: var(--accent-color);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .badge-highlight {
+            background: #2b9348;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1ebe5d;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: #adb5bd;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        footer strong {
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .tagline { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        A Loja Mais Completa da Cidade
+    </div>
+
+    <header class="hero">
+        <h1>Sport & Cia</h1>
+        <div class="tagline">A Loja Mais Completa da Cidade</div>
+        <div class="contact-info">
+            <span>📍 Av. Sebastião Diniz, 735 - Centro, Boa Vista - RR</span>
+            <span>📞 (95) 9901-0461</span>
+            <span>📸 Instagram: @sportcia123</span>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- CAMISAS -->
+        <h2 class="section-title">Camisas Oficiais de Clubes - 2026</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-title">Camisa Corinthians 2026</div>
+                    <div class="product-subtitle">Modelo Torcedor - Branca com Detalhes Texturizados</div>
+                </div>
+                <div class="product-body">
+                    <ul class="features-list">
+                        <li>Design oficial licenciado</li>
+                        <li>Tecido tecnológico de alta respirabilidade</li>
+                        <li>Escudo bordado de alta definição</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="badge">Disponível</span>
+                        <a href="https://wa.me/559599010461?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Camisa%20Corinthians%202026%20Branca." target="_blank" class="whatsapp-btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-title">Camisa Corinthians 2026</div>
+                    <div class="product-subtitle">Modelo Torcedor - Preta Lisa com Riscas Subtis</div>
+                </div>
+                <div class="product-body">
+                    <ul class="features-list">
+                        <li>Elegância clássica alvinegra</li>
+                        <li>Gola e punhos com acabamento premium</li>
+                        <li>Conforto máximo para o dia a dia e estádio</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="badge">Disponível</span>
+                        <a href="https://wa.me/559599010461?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Camisa%20Corinthians%202026%20Preta." target="_blank" class="whatsapp-btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-title">Camisa Corinthians 2026</div>
+                    <div class="product-subtitle">Modelo Torcedor - Branca com Riscas Tracejadas</div>
+                </div>
+                <div class="product-body">
+                    <ul class="features-list">
+                        <li>Padrão moderno com riscas verticais pretas</li>
+                        <li>Leveza e durabilidade excecionais</li>
+                        <li>Ajuste ergonómico perfeito</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="badge">Disponível</span>
+                        <a href="https://wa.me/559599010461?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Camisa%20Corinthians%202026%20Riscas%20Tracejadas." target="_blank" class="whatsapp-btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-title">Camisa Flamengo Oficial 2026</div>
+                    <div class="product-subtitle">Modelo Torcedor - Rubro-Negra com Gola Polo</div>
+                </div>
+                <div class="product-body">
+                    <ul class="features-list">
+                        <li>Listras rubro-negras tradicionais</li>
+                        <li>Gola polo diferenciada e moderna</li>
+                        <li>Tecnologia de absorção de suor Adidas</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="badge badge-highlight">Destaque</span>
+                        <a href="https://wa.me/559599010461?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Camisa%20Flamengo%20Oficial%202026." target="_blank" class="whatsapp-btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TÉNIS -->
+        <h2 class="section-title">Calçados & Ténis Esportivos</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-title">Tênis Nike Precision 8 Low</div>
+                    <div class="product-subtitle">Performance e Estabilidade</div>
+                </div>
+                <div class="product-body">
+                    <ul class="features-list">
+                        <li>Amortecimento de alta resposta</li>
+                        <li>Solado aderente para tração superior</li>
+                        <li>Design moderno para quadra e casual</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="badge">Disponível</span>
+                        <a href="https://wa.me/559599010461?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Tênis%20Nike%20Precision%208%20Low." target="_blank" class="whatsapp-btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-title">Tênis Adidas Acelera 2</div>
+                    <div class="product-subtitle">Conforto para o Dia a Dia</div>
+                </div>
+                <div class="product-body">
+                    <ul class="features-list">
+                        <li>Cabedal respirável e leve</li>
+                        <li>Suporte durável para caminhadas e treinos</li>
+                        <li>Estilo urbano com DNA esportivo</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="badge">Disponível</span>
+                        <a href="https://wa.me/559599010461?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Tênis%20Adidas%20Acelera%202." target="_blank" class="whatsapp-btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-title">Tênis Fila Speed Zone 2</div>
+                    <div class="product-subtitle">Alta Velocidade e Agilidade</div>
+                </div>
+                <div class="product-body">
+                    <ul class="features-list">
+                        <li>Tecnologia avançada de propulsão</li>
+                        <li>Conforto anatómico ajustável</li>
+                        <li>Visual arrojado de alta performance</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="badge">Disponível</span>
+                        <a href="https://wa.me/559599010461?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Tênis%20Fila%20Speed%20Zone%202." target="_blank" class="whatsapp-btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOLAS -->
+        <h2 class="section-title">Bolas Esportivas Oficiais</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-title">Bola de Campo Penalty Bravo</div>
+                    <div class="product-subtitle">Futebol de Campo</div>
+                </div>
+                <div class="product-body">
+                    <ul class="features-list">
+                        <li>Tecnologia de dupla colagem e resistência</li>
+                        <li>Excelente precisão e menor absorção de água</li>
+                        <li>Ideal para relvado natural</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="badge">Disponível</span>
+                        <a href="https://wa.me/559599010461?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Bola%20de%20Campo%20Penalty%20Bravo." target="_blank" class="whatsapp-btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-title">Bola de Futsal Penalty RX500</div>
+                    <div class="product-subtitle">Futebol de Salão</div>
+                </div>
+                <div class="product-body">
+                    <ul class="features-list">
+                        <li>Toque macio para máximo controle</li>
+                        <li>Gomos costurados com precisão</li>
+                        <li>Alta durabilidade em quadras indoor</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="badge">Disponível</span>
+                        <a href="https://wa.me/559599010461?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Bola%20de%20Futsal%20Penalty%20RX500." target="_blank" class="whatsapp-btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-title">Bola Society Penalty Líder</div>
+                    <div class="product-subtitle">Futebol Society</div>
+                </div>
+                <div class="product-body">
+                    <ul class="features-list">
+                        <li>Perfeita para relvado sintético</li>
+                        <li>Resistência redobrada contra abrasão</li>
+                        <li>Estabilidade durante os passes e remates</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="badge">Disponível</span>
+                        <a href="https://wa.me/559599010461?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Bola%20Society%20Penalty%20Líder." target="_blank" class="whatsapp-btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p><strong>SPORT & CIA</strong> — A Loja Mais Completa da Cidade</p>
+        <p style="margin-top: 8px;">Av. Sebastião Diniz, 735 - Centro, Boa Vista - RR | WhatsApp: (95) 9901-0461</p>
+    </footer>
+
+</body>
+</html>
+                   
